@@ -29,7 +29,7 @@ cli
       const urls = [];
       $("div[data-target='readme-toc.content'] a").each(function () {
         const href = $(this).attr('href');
-        if (href.startsWith('http')) {
+        if (href && href.startsWith('http')) {
           urls.push(href);
         }
       });

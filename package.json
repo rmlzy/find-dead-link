@@ -1,7 +1,7 @@
 {
   "name": "find-dead-link",
   "description": "Find dead links in github README",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "rmlzy <rmlzy@outlook.com> (https://poppython.com)",
   "bin": {
     "fdl": "cli.js"
