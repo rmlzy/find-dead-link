@@ -1,7 +1,7 @@
 {
   "name": "find-dead-link",
-  "description": "Find dead links in README",
-  "version": "1.0.0",
+  "description": "Find dead links in github README",
+  "version": "1.0.1",
   "author": "rmlzy <rmlzy@outlook.com> (https://poppython.com)",
   "bin": {
     "fdl": "cli.js"
@@ -17,6 +17,7 @@
     "axios": "^0.21.1",
     "cac": "^6.7.3",
     "cheerio": "^1.0.0-rc.10",
+    "progress": "^2.0.3",
     "update-notifier": "^5.1.0"
   },
   "devDependencies": {

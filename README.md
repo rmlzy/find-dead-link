@@ -2,11 +2,17 @@ Find dead link in github README.
 
 ## Installation
 
-```
-npm i -g node-joke-cli
+```bash
+npm i -g find-dead-link
 
 # or
-yarn global add node-joke-cli
+yarn global add find-dead-link
+```
+
+## Usage
+
+```bash
+fdl https://github.com/sindresorhus/awesome-electron
 ```
 
 ## Preview

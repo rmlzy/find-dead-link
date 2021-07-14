@@ -4,6 +4,7 @@ const cac = require('cac');
 const update = require('update-notifier');
 const axios = require('axios');
 const cheerio = require('cheerio');
+const ProgressBar = require('progress');
 const pkg = require('./package');
 
 const cli = cac('fdl');
@@ -37,15 +38,17 @@ cli
         url.startsWith('https://github.com')
       );
       const deadLinks = [];
-
-      console.log('--------------------------');
+      console.log('Start...');
+      const progressBar = new ProgressBar(':bar :current/:total', {
+        total: githubLinks.length
+      });
       for (let i = 1; i <= githubLinks.length; i++) {
-        console.log(`Process: ${i} of ${githubLinks.length}`);
         const url = githubLinks[i];
         const valid = await checkGithubUrl(url);
         if (!valid) {
           deadLinks.push(url);
         }
+        progressBar.tick();
       }
       if (deadLinks.length) {
         console.log(`Got ${deadLinks.length} dead links:`);
@@ -53,7 +56,6 @@ cli
       } else {
         console.log('Every link is correct.');
       }
-      console.log('--------------------------');
     } catch (e) {
       console.log(e);
     }
